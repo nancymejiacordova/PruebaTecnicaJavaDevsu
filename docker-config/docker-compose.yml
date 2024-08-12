@@ -1,0 +1,20 @@
+services:
+ mysqldb:
+  image : mysql
+  restart : always
+  container_name : mysqldb
+  environment : 
+    MYSQL_ROOT_PASSWORD: 'password'
+    MYSQL_DATABASE: 'clientesdb'
+  ports:
+   - 3306:3306
+ phpmyadmin:
+  depends_on:
+             - mysqldb
+  image : phpmyadmin
+  restart: always
+  container_name: phpmyadmin
+  environment:
+    PMA_HOST: mysqldb
+  ports:
+        - 8090:80
