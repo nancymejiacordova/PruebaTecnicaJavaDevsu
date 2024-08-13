@@ -4,10 +4,18 @@
  */
 package com.pruebatecnicajava.devsu.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestClient;
+
 /**
  *
  * @author Nancy Mejia
  */
-public class webConfig {
-    
+@Configuration
+public class webConfig{
+    @Bean
+    public RestClient restClient(){
+        return RestClient.builder().build();
+    }
 }

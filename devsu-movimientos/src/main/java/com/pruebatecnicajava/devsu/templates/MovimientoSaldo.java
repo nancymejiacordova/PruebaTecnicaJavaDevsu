@@ -20,7 +20,10 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MovimientoCreateTemp {
-    private String numeroCuenta;
-    private BigDecimal valor;
+public class MovimientoSaldo {
+    
+    private String idMovimiento;
+    private String cuenta;
+    private BigDecimal saldoDisponible;
+
 }

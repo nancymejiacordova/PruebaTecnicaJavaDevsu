@@ -2,25 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.pruebatecnicajava.devsu.templates;
+package com.pruebatecnicajava.devsu.enums;
 
-import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  *
  * @author Nancy Mejia
  */
 @Getter
-@Setter
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class MovimientoCreateTemp {
-    private String numeroCuenta;
-    private BigDecimal valor;
+public enum TipoEstadoEnum {
+     T("True"),F("False");
+    private final String descripcion;
+    public boolean valueBoolean(){
+        return T.descripcion.equals(this.getDescripcion());
+    };
 }

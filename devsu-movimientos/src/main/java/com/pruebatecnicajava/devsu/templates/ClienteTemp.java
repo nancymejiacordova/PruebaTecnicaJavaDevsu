@@ -4,7 +4,6 @@
  */
 package com.pruebatecnicajava.devsu.templates;
 
-import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +19,8 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MovimientoCreateTemp {
-    private String numeroCuenta;
-    private BigDecimal valor;
+public class ClienteTemp {
+    
+    private Long clienteId;
+    private String nombre;
 }

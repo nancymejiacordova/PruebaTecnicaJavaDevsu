@@ -4,6 +4,7 @@
  */
 package com.pruebatecnicajava.devsu.templates;
 
+import com.pruebatecnicajava.devsu.enums.TipoMovimientoEnum;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +21,10 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MovimientoCreateTemp {
-    private String numeroCuenta;
-    private BigDecimal valor;
+public class MovimientoTemp {
+    
+    private String numerocuenta;
+    private TipoMovimientoEnum tipoMovimiento;
+    private Long valor;
+    
 }

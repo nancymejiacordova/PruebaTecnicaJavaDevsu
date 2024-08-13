@@ -4,7 +4,9 @@
  */
 package com.pruebatecnicajava.devsu.templates;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +22,14 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MovimientoCreateTemp {
+public class MovimientosRpt {
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate fecha;
+    private String cliente;
     private String numeroCuenta;
-    private BigDecimal valor;
+    private String tipoCuenta;
+    private BigDecimal saldoInicial;
+    private boolean estado;
+    private BigDecimal movimiento;
+    private BigDecimal saldoDisponible;
 }

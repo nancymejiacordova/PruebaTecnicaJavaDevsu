@@ -4,10 +4,20 @@
  */
 package com.pruebatecnicajava.devsu.templates;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  *
  * @author Nancy Mejia
  */
-public class MovimientoSecTemp {
-    
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class ClienteRest {
+    private Long clienteId;
+    private String nombre;
 }
