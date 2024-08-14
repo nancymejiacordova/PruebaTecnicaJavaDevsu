@@ -26,7 +26,8 @@ public class ClienteConverTemplate implements Converter<Cliente,ClienteSecTemp> 
             .identificacion(c.getIdentificacion())
             .direccion(c.getDireccion())
             .telefono(c.getTelefono())
-            .estado(c.getEstado().name()).build();
+            .estado(EstadoClienteEnum.getEstadoString(c.getEstado()))
+        .build();
     }
     
     
