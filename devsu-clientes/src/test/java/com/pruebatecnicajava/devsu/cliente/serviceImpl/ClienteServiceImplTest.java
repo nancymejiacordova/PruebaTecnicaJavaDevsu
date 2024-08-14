@@ -28,9 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.ArgumentMatchers;
 import static org.mockito.ArgumentMatchers.any;
 import org.mockito.InjectMocks;
@@ -171,7 +169,7 @@ public class ClienteServiceImplTest {
                     .edad(40)
                     .identificacion("V-15748965")
                     .direccion("Direccion Actualizada")
-                    .telefono("098254785")
+                    .telefono("228254785")
                     .password("12345678")
                 .build())
         );

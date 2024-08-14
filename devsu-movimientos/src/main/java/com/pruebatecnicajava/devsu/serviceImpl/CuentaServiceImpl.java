@@ -51,13 +51,7 @@ public class CuentaServiceImpl implements CuentaService{
         Cuenta cuentaEntity = this.findBynumerocuenta(numerocuenta);
         return cuentaEntity;
     }
-   /* @Override
-    @Transactional(readOnly = true)
-    public Cuenta buscarCuentaa(String numeroCuenta) {
-        Cuenta cuentaEntity = this.buscarXNroCuenta(numeroCuenta);
-        return cuentaEntity;
-    }
-
+   
     /**
      * {@inheritDoc}
      */

@@ -4,7 +4,6 @@
  */
 package com.pruebatecnicajava.devsu.model;
 
-import com.pruebatecnicajava.devsu.enums.TipoCuentaEnum;
 import com.pruebatecnicajava.devsu.enums.TipoMovimientoEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

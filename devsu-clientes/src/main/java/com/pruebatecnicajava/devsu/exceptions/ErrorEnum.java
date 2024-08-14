@@ -15,14 +15,14 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum ErrorEnum {
-    /*Errores genericos*/
+    /*ERRORES GENERALES*/
     DEFAULT("500", "Error Generico"),
     REST_CLIENT("ERROR_CO_001", "Error al consumir servicio REST"),
     INVALID_ARGS("ERROR_CO_002", "Argumentos invalidos"),
     NOT_ALLOWED("ERROR_CO_003", "No permitido"),
     INVALID_BODY("ERROR_CO_004", "Cuerpo de llamada invalido"),
     NO_CONTENT("ERROR_CO_005", "Cuerpo de llamada invalido"),
-    /*Errores de dominio - Cliente*/
+    /*ERRORES DE DOMINIO - Cliente*/
     CLIENTE_NOT_FOUND("ERROR_CL_001", "Cliente no existe"),;
 
     private String code;

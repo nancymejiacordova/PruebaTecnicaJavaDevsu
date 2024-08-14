@@ -35,10 +35,7 @@ public class ClienteController {
     
     private final ClienteService clienteService;
 
-//    @Operation(description = "Listado de clientes", tags = {"ClienteController"})
-//    @ApiResponse(responseCode = "200", description = "Listado de cliente")
-//    @ApiResponse(responseCode = "204", description = "No existen clientes, listado vacio")
-//    @ApiResponse(responseCode = "500", description = "Error general")
+
     @GetMapping()
     public List<ClienteSecTemp> listar() {
         var listadoClientes = clienteService.listClientes();
@@ -48,28 +45,18 @@ public class ClienteController {
         return listadoClientes;
     }
 
-//    @Operation(description = "Obtiene un cliente segun su id", tags = {"ClienteController"})
-//    @ApiResponse(responseCode = "200", description = "Informacion obtenida de manera satisfactoria")
-//    @ApiResponse(responseCode = "404", description = "Cliente consultado no existe")
-//    @ApiResponse(responseCode = "500", description = "Error general")
     @GetMapping(value = "/ver/{clienteId}")
     public ClienteSecTemp buscarPorId(@PathVariable Long clienteId) {
         return clienteService.buscarCliente(clienteId);
     }
 
-//    @Operation(description = "Crea un cliente", tags = {"ClienteController"})
-//    @ApiResponse(responseCode = "200", description = "Creacion del cliente satisfactoria")
-//    @ApiResponse(responseCode = "500", description = "Error general")
+
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public ClienteSecTemp crear(@RequestBody ClienteCreateTemp clienteRequest) {
         return clienteService.crearCliente(clienteRequest);
     }
 
-//    @Operation(description = "Actualiza la informacion del cliente indicado", tags = {"ClienteController"})
-//    @ApiResponse(responseCode = "200", description = "Actualizacion de cliente satisfactoria")
-//    @ApiResponse(responseCode = "404", description = "Cliente a actualizar no existe")
-//    @ApiResponse(responseCode = "500", description = "Error general")
     @PatchMapping(value = "/{clienteId}")
     public ClienteSecTemp actualizar(@PathVariable Long clienteId,
                                 @RequestBody ClienteCreateTemp clienteRequest)
@@ -77,10 +64,6 @@ public class ClienteController {
         return clienteService.actualizarCliente(clienteId, clienteRequest);
     }
 
-//    @Operation(description = "Eliina un cliente de forma logica", tags = {"ClienteController"})
-//    @ApiResponse(responseCode = "200", description = "Eliminacion de cliente satisfactoria")
-//    @ApiResponse(responseCode = "404", description = "Cliente a eliminar no existe")
-//    @ApiResponse(responseCode = "500", description = "Error general")
     @DeleteMapping(value = "/{clienteId}")
     public void eliminar(@PathVariable Long clienteId) {
         clienteService.elimCliente(clienteId);

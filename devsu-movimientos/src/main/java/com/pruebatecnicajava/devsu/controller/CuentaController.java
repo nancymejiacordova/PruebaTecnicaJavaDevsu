@@ -33,12 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CuentaController {
      private final CuentaService cuentaService;
 
-  /*  @Operation(description = "Listado de cuentas")
-    @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Listado de cuentas"),
-        @ApiResponse(responseCode = "204", description = "No existen cuentas, listado vacio"),
-        @ApiResponse(responseCode = "500", description = "Error general"),
-    })*/
+
     @GetMapping()
     public Page<Cuenta> listar(Pageable pageable){
         var listCuentas = this.cuentaService.listCuentas(pageable);
@@ -48,22 +43,13 @@ public class CuentaController {
         return listCuentas;
     }
 
-    /*@Operation(description = "Obtiene detalle de la cuenta")
-    @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Informacion obtenida de manera satisfactoria"),
-        @ApiResponse(responseCode = "404", description = "Cuenta no existente"),
-        @ApiResponse(responseCode = "500", description = "Error general"),
-    })*/
+    
     @GetMapping(value = "/detalle/{numeroCuenta}")
     public Cuenta buscarPorId(@PathVariable String numeroCuenta) {
         return this.cuentaService.buscarCuenta(numeroCuenta);
     }
 
-    /*@Operation(description = "Crea una cuenta")
-    @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Creacion del clienteVm satisfactoria"),
-        @ApiResponse(responseCode = "500", description = "Error general"),
-    })*/
+    
 
     /**
      *
@@ -77,12 +63,7 @@ public class CuentaController {
         return this.cuentaService.crearCuenta(cuentaCreateTemp);
     }
 
-    /*@Operation(description = "Eliina una cuenta de forma logica")
-    @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Eliminacion de clienteVm satisfactoria"),
-        @ApiResponse(responseCode = "404", description = "ClienteVm a eliminar no existe"),
-        @ApiResponse(responseCode = "500", description = "Error general"),
-    })*/
+    
     @DeleteMapping(value = "/{numeroCuenta}")
     public void eliminar(@PathVariable String numeroCuenta) {
         this.cuentaService.eliminarCuenta(numeroCuenta);

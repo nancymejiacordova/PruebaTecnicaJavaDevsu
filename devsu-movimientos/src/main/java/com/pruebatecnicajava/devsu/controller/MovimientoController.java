@@ -4,7 +4,6 @@
  */
 package com.pruebatecnicajava.devsu.controller;
 
-import com.pruebatecnicajava.devsu.model.Movimiento;
 import com.pruebatecnicajava.devsu.service.MovimientoService;
 import com.pruebatecnicajava.devsu.templates.MovimientoSaldo;
 import com.pruebatecnicajava.devsu.templates.MovimientoTemp;
@@ -35,12 +34,7 @@ public class MovimientoController {
     
     private final MovimientoService movimientoService;
 
-   /* @Operation(description = "Registra un movimeinto")
-    @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Movimiento registrado"),
-        @ApiResponse(responseCode = "400", description = "Peticion invalida"),
-        @ApiResponse(responseCode = "500", description = "Error general"),
-    })*/
+ 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public MovimientoSaldo registrarMovimiento(@RequestBody MovimientoTemp movimientotemp) {

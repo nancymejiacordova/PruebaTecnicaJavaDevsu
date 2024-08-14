@@ -6,7 +6,6 @@ package com.pruebatecnicajava.devsu.templates;
 
 import com.pruebatecnicajava.devsu.enums.TipoCuentaEnum;
 import com.pruebatecnicajava.devsu.enums.TipoEstadoEnum;
-import com.pruebatecnicajava.devsu.model.Cliente;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

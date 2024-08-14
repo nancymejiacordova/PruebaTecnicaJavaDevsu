@@ -29,7 +29,7 @@ public enum ErrorEnum {
     CREAR_CUENTA_CLIENTE_NOT_FOUND("ERROR_CTA_005", "No se ha obtenido informacion del cliente"),
     /*Errores de dominio - Movimientos*/
     SALDO_INSUFICIENTE("ERROR_MOV_001", "Saldo no disponible"),
-    ERROR_FECHA_INVALIDA("ERROR_MOV_002", "La fecha de consulta no puede ser superior a la fecha del dia"),
+    ERROR_FECHA_INVALIDA("ERROR_MOV_002", "La fecha de consulta no puede ser superior a la fecha actual"),
     ERROR_FECHA_FIN_INVALIDA("ERROR_MOV_003", "La fecha de fin de la consulta no puede ser superior a la fecha de inicio");
 
     private String code;

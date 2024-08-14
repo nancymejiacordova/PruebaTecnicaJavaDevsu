@@ -42,16 +42,16 @@ public class ClientServiceIntegrationTest {
                         .willReturn(aResponse()
                                 .withStatus(200)
                                 .withHeader("Content-Type", "application/json")
-                                .withBody("{ \"id\": \"1234\", \"name\": \"Julian\", \"age\": 35," +
-                                        "\"phone\": \"123456789\", \"address\": \"Calle 123\"} "
+                                .withBody("{ \"id\": \"1234\", \"name\": \"Nancy\", \"age\": 35," +
+                                        "\"phone\": \"123456789\", \"address\": \"Calle 9\"} "
                                 )));
         stubFor(
                 get(urlEqualTo("/clientes"))
                         .willReturn(aResponse()
                                 .withStatus(200)
                                 .withHeader("Content-Type", "application/json")
-                                .withBody("{ \"id\": \"1234\", \"name\": \"Julian\", \"age\": 35," +
-                                        "\"phone\": \"123456789\", \"address\": \"Calle 123\"} "
+                                .withBody("{ \"id\": \"1234\", \"name\": \"Nancy\", \"age\": 35," +
+                                        "\"phone\": \"123456789\", \"address\": \"Calle 9\"} "
                                 )));
     }
 

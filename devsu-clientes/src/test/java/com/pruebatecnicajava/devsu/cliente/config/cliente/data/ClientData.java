@@ -50,7 +50,7 @@ public class ClientData {
             .genero(GeneroEnum.FEMENINO)
             .password("123456")
             .identificacion("E-14596523")
-            .telefono("74859632")
+            .telefono("71070331")
             .build();
     }
 
@@ -61,7 +61,7 @@ public class ClientData {
             .edad(39)
             .identificacion("E-14596523")
             .direccion("Direccion")
-            .telefono("74859632")
+            .telefono("74859638")
             .password("123456")
             .build();
     }
@@ -72,10 +72,10 @@ public class ClientData {
             .clienteId(123L)
             .nombre("Nombre Cliente")
             .genero(GeneroEnum.MASCULINO.name())
-            .edad(39L)
+            .edad(25L)
             .identificacion("E-14596523")
             .direccion("Direccion")
-            .telefono("74859632")
+            .telefono("74859658")
             .estado(EstadoClienteEnum.getEstadoString(EstadoClienteEnum.TRUE))
             .build();
     }
