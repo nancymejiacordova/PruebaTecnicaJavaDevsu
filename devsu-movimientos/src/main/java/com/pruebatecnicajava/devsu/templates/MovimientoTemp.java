@@ -25,6 +25,6 @@ public class MovimientoTemp {
     
     private String numerocuenta;
     private TipoMovimientoEnum tipoMovimiento;
-    private Long valor;
+    private BigDecimal valor;
     
 }

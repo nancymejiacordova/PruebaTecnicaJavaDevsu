@@ -6,6 +6,7 @@ package com.pruebatecnicajava.devsu.service;
 
 import com.pruebatecnicajava.devsu.model.Cuenta;
 import com.pruebatecnicajava.devsu.templates.CuentaCreateTemp;
+import java.math.BigDecimal;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -28,8 +29,6 @@ public interface CuentaService {
      */
     Cuenta buscarCuenta(String numerocuenta);
     
-     //Cuenta buscarCuentaa(String numeroCuenta);
-
     /**
      *
      * @param numeroCuenta
@@ -44,6 +43,7 @@ public interface CuentaService {
      */
     Cuenta crearCuenta(CuentaCreateTemp cuentaCreateTemp);
 
+    Cuenta actualizarMontoCuenta(Cuenta cuenta, BigDecimal monto); 
     /**
      * Elimina una cuenta de manera logica
      * @param numerocuenta

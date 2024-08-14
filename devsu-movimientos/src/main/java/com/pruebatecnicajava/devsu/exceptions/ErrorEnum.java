@@ -15,7 +15,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ErrorEnum {
     /*Errores genericos*/
-    DEFAULT("500", "Error Generico"),
+    DEFAULT("500", "Error General"),
     REST_CLIENT("ERROR_CO_001", "Error al consumir servicio REST"),
     INVALID_ARGS("ERROR_CO_002", "Argumentos invalidos"),
     NOT_ALLOWED("ERROR_CO_003", "No permitido"),

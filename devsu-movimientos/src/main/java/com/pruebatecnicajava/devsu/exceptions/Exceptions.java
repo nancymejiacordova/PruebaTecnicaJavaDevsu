@@ -16,28 +16,29 @@ import lombok.Getter;
  */
 @Getter
 @JsonIgnoreProperties({"cause", "stackTrace", "localizedMessage", "suppressed", "status", "errorEnum"})
+
 public class Exceptions extends RuntimeException {
     private final int status;
     private final String code;
     private final ErrorEnum errorEnum;
 
-    public Exceptions(final ErrorEnum enumError) {
-        this(enumError, (Throwable)null);
+    public Exceptions(final ErrorEnum errorEnum) {
+        this(errorEnum, (Throwable)null);
     }
 
-    public Exceptions(final ErrorEnum enumError, final Throwable cause) {
-        this(enumError, 500, cause);
+    public Exceptions(final ErrorEnum errorEnum, final Throwable cause) {
+        this(errorEnum, 500, cause);
     }
 
-    public Exceptions(final ErrorEnum enumError, final int httpStatus) {
-        this(enumError, httpStatus, (Throwable)null);
+    public Exceptions(final ErrorEnum errorEnum, final int httpStatus) {
+        this(errorEnum, httpStatus, (Throwable)null);
     }
 
-    public Exceptions(final ErrorEnum enumError, final int httpStatus, final Throwable cause) {
-        super(enumError.getMessage(), cause);
-        this.errorEnum = enumError;
+    public Exceptions(final ErrorEnum errorEnum, final int httpStatus, final Throwable cause) {
+        super(errorEnum.getMessage(), cause);
+        this.errorEnum = errorEnum;
         this.status = httpStatus;
-        this.code = enumError.getCode();
+        this.code = errorEnum.getCode();
     }
 }
 

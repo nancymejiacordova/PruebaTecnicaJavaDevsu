@@ -8,6 +8,7 @@ import com.pruebatecnicajava.devsu.exceptions.ErrorEnum;
 import com.pruebatecnicajava.devsu.exceptions.Exceptions;
 import com.pruebatecnicajava.devsu.model.Cuenta;
 import com.pruebatecnicajava.devsu.model.Movimiento;
+import com.pruebatecnicajava.devsu.repository.CuentaRepository;
 import com.pruebatecnicajava.devsu.repository.MovimientoRepository;
 import com.pruebatecnicajava.devsu.service.CuentaService;
 import com.pruebatecnicajava.devsu.service.MovimientoService;
@@ -37,6 +38,7 @@ public class MovimientoServiceImpl implements MovimientoService {
     
     private final MovimientoRepository movimientoRepository;
     private final CuentaService cuentaService;
+    private final CuentaRepository cuentaReposotory;
    // private final MovimientoCreadoPublisher movimientoCreadoPublisher;
 
     /**
@@ -50,22 +52,17 @@ public class MovimientoServiceImpl implements MovimientoService {
 
         var cuenta = this.cuentaService.findBynumerocuenta(movimientoTemp.getNumerocuenta());
         var valorMovimiento = movimientoTemp.getValor();
-//        if (cuenta.getSaldoinicial().add(valorMovimiento).compareTo(BigDecimal.ZERO) < 0) {
-//            throw new Exceptions(ErrorEnum.SALDO_INSUFICIENTE, HttpStatus.BAD_REQUEST.value());
-//        }
+        if (cuenta.getSaldoinicial().add(valorMovimiento).compareTo(BigDecimal.ZERO) < 0) {
+            throw new Exceptions(ErrorEnum.SALDO_INSUFICIENTE, HttpStatus.BAD_REQUEST.value());
+        }
         var movimiento = Movimiento.builder()
             .cuenta(cuenta)
-            .valor(new BigDecimal(valorMovimiento))
+            .valor(valorMovimiento)
             .tipomovimiento(movimientoTemp.getTipoMovimiento())
-            .saldo(cuenta.getSaldoinicial().add(new BigDecimal(valorMovimiento)))
+            .saldo(cuenta.getSaldoinicial().add(valorMovimiento))
             .build();
+        this.cuentaService.actualizarMontoCuenta(cuenta, movimiento.getSaldo());
         this.movimientoRepository.save(movimiento);
-        //this.movimientoCreadoPublisher.publishEvent(movimiento);
-        /*return Movimiento.builder()
-            .cuenta(cuenta)
-            .idMovimiento(String.valueOf(movimiento.getMovimientoId()))
-            .soldoDisponible(movimiento.getSaldo())
-            .build();*/
         return MovimientoSaldo.builder()
             .cuenta(cuenta.getNumerocuenta())
             .idMovimiento(String.valueOf(movimiento.getIdmovimiento()))

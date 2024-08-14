@@ -62,6 +62,13 @@ public class CuentaServiceImpl implements CuentaService{
      * {@inheritDoc}
      */
     @Override
+    @Transactional(readOnly = true)
+    public Cuenta actualizarMontoCuenta(Cuenta cuenta, BigDecimal monto) {
+        cuenta.setSaldoinicial(monto);
+        Cuenta cuentaEntity = this.cuentaRepository.save(cuenta);
+        return cuentaEntity;
+    }
+    @Override
     @Transactional()
     public Cuenta crearCuenta(CuentaCreateTemp cuentaCreateTemp) {
 
