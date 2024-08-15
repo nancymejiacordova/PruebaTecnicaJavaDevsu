@@ -20,7 +20,7 @@ Prueba Técnica para optar al puesto de Programador Senior Java en la empresa De
 para levantar la aplicación ejecutar el comando : 
 Docker compose up -d
 ## Buenas Practicas de Programación
-  -Definicion de interfaz persona para la implementación y reutilización de código.
+  -Utilización de clase abstracta para la implementación y reutilización de código.
   -Uso de patron de diseño Builder para construcción de objetos paso a paso.  
 ## Manejo de Excepciones
   Se realiza en la capa de servicios a traves de la implementación de la clase Exceptions y RestExceptionHandler
